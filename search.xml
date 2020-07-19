@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/07/19/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>xutopia-blog</title>
+    <url>/2020/07/19/xutopia-blog/</url>
+    <content><![CDATA[<p>搭建hexo博客环境，使用的主题是next。</p>
+<a id="more"></a>
+
+<h1 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h1><p>下载地址</p>
+<p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a> </p>
+<p>下载完成后直接安装就好。</p>
+<p>安装的时候选择一下安装路径，最好不要放在C盘，原因在下文会有提到：</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719103822090.png" alt="image-20200719103822090"></p>
+<p>安装完成后使用cmd命令检查是否安装成功。</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719104425712.png" alt="image-20200719104425712"></p>
+<p>设置 npm在安装全局模块时的路径和环境变量。</p>
+<p>因为在执行例如npm install webpack -g等命令全局安装的时候，默认会将模块安装在C:\Users\用户名\AppData\Roaming路径下的npm和npm_cache中，不方便管理且占用C盘空间，如下图所示： </p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719105821997.png" alt="image-20200719105821997"></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">npm <span class="built_in">config</span> <span class="built_in">set</span> prefix <span class="string">"E:\nodejs\node_global"</span></span><br><span class="line">npm <span class="built_in">config</span> <span class="built_in">set</span> cache <span class="string">"E:\nodejs\node_cache"</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/07/19/xutopia-blog/image-20200719110023562.png" alt="image-20200719110023562"></p>
+<p>设置环境变量：<strong>win10系统 –&gt; 打开控制面板 –&gt; 系统 –&gt;高级系统设置 –&gt; 环境变量 ，</strong>然后在系统变量中新建一个变量名为“NODE_PATH”，值为“E:\nodejs\node_global\node_modules”，如下图：</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719111329268.png" alt="image-20200719111329268"></p>
+<p>最后编辑用户变量里的Path，将相应npm的路径改为：E:\node_global，如下：</p>
+<p>更改前：</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719111604829.png" alt="image-20200719111604829"></p>
+<p>更改后</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719112024651.png" alt="image-20200719112024651"></p>
+<p>在cmd命令下执行 npm install webpack -g 然后安装成功后可以看到自定义的两个文件夹已生效：</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719112354871.png" alt="image-20200719112354871"></p>
+<p>使用npm webpack -v 可以看到所安装webpack的版本号：</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719112446180.png" alt="image-20200719112446180"></p>
+<h1 id="搭建hexo"><a href="#搭建hexo" class="headerlink" title="搭建hexo"></a>搭建hexo</h1><h2 id="在github上面建立一个仓库"><a href="#在github上面建立一个仓库" class="headerlink" title="在github上面建立一个仓库"></a>在github上面建立一个仓库</h2><p><img src="/2020/07/19/xutopia-blog/image-20200719033951300.png" alt="image-20200719033951300"></p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719113501801.png" alt="image-20200719113501801"></p>
+<h2 id="安装hexo："><a href="#安装hexo：" class="headerlink" title="安装hexo："></a>安装hexo：</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/07/19/xutopia-blog/image-20200719113731127.png" alt="image-20200719113731127"></p>
+<p>初始化博客</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/07/19/xutopia-blog/image-20200719115447786.png" alt="image-20200719115447786"></p>
+<p>生成博客</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719115613532.png" alt="image-20200719115613532"></p>
+<p>启动博客</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/07/19/xutopia-blog/image-20200719115717602.png" alt="image-20200719115717602"></p>
+<p>浏览器输入 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 就可以进行访问博客</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719115908282.png" alt="image-20200719115908282"></p>
+<h2 id="将Hexo部署到GitHub"><a href="#将Hexo部署到GitHub" class="headerlink" title="将Hexo部署到GitHub"></a>将Hexo部署到GitHub</h2><p>打开配置文件</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719120133116.png" alt="image-20200719120133116"></p>
+<p>更改配置文件</p>
+<p>更改前</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719120426233.png" alt="image-20200719120426233"></p>
+<p>更改后</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719120347434.png" alt="image-20200719120347434"></p>
+<p>安装Git部署插件，输入命令：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/07/19/xutopia-blog/image-20200719120549140.png" alt="image-20200719120549140"></p>
+<p>分别执行下面三条命令：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">hexo clean   #清除缓存文件 db.json 和已生成的静态文件 <span class="keyword">public</span></span><br><span class="line">hexo g       #生成网站静态文件到默认设置的 <span class="keyword">public</span> 文件夹,(hexo generate 的缩写)</span><br><span class="line">hexo d       #自动生成网站静态文件，并部署到设定的仓库,(hexo deploy 的缩写)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/07/19/xutopia-blog/image-20200719120905535.png" alt="image-20200719120905535"></p>
+<p>打开浏览器，输入 <a href="https://link.zhihu.com/?target=https%3A//fengye97.github.io/">https://xxx.github.io</a> 就可以打开你的网页了：</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719120955550.png" alt="image-20200719120955550"></p>
+<h1 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h1><p>创建新的博客</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">hexo n <span class="string">"xutopia_blog"</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/07/19/xutopia-blog/image-20200719121625291.png" alt="image-20200719121625291"></p>
+<p>新的博客在如下位置</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719121701320.png" alt="image-20200719121701320"></p>
+<p>编写完成后执行如下命令</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line"><span class="comment">//hexo s    //这一步可以在本地就可以预览修改后的博客是什么样子的，当预览达到预期后，就可以推送到github上去。</span></span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>可以看到已经更新</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719122234512.png" alt="image-20200719122234512"></p>
+<h1 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h1><p><img src="/2020/07/19/xutopia-blog/image-20200719122711890.png" alt="image-20200719122711890"></p>
+<h2 id="下载next主题"><a href="#下载next主题" class="headerlink" title="下载next主题"></a>下载next主题</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">git clone https:<span class="comment">//github.com/theme-next/ themes/next</span></span><br></pre></td></tr></table></figure>
+
+<p>目录中已经存在next主题</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719122826033.png" alt="image-20200719122826033"></p>
+<p>更改配置文件</p>
+<p>更改前</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719122938585.png" alt="image-20200719122938585"></p>
+<p>更改后</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719123000957.png" alt="image-20200719123000957"></p>
+<p>再修改主题的配置文件路径在 themes\next\ _config.yml，更改为自己喜欢的主题</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719123207052.png" alt="image-20200719123207052"></p>
+<p>执行命令</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line"><span class="comment">//hexo s    //这一步可以在本地就可以预览修改后的博客是什么样子的，当预览达到预期后，就可以推送到github上去。</span></span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/07/19/xutopia-blog/image-20200719123513625.png" alt="image-20200719123513625"></p>
+<h2 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h2><p>在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
+<h3 id="图片不上传"><a href="#图片不上传" class="headerlink" title="图片不上传"></a>图片不上传</h3><p>图片不上传的原因是md文档中的对图片引用的方式不对</p>
+<p>1，typora要设置为</p>
+<p><img src="/2020/07/19/xutopia-blog/image-20200719143951325.png" alt="image-20200719143951325"></p>
+<p>参考文档</p>
+<p><a href="https://blog.csdn.net/m0_43401436/article/details/107191688" target="_blank" rel="noopener">https://blog.csdn.net/m0_43401436/article/details/107191688</a> </p>
+<p><a href="https://zhuanlan.zhihu.com/p/144673816" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/144673816</a> </p>
+]]></content>
+  </entry>
+</search>
