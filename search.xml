@@ -120,4 +120,41 @@
 <p><a href="https://zhuanlan.zhihu.com/p/144673816" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/144673816</a> </p>
 ]]></content>
   </entry>
+  <entry>
+    <title>android手机上安装linux</title>
+    <url>/2020/07/19/android_linux/</url>
+    <content><![CDATA[<p>换了旧手机一直闲置在那里，看着很不舒服，考虑一下在其中安装linux。</p>
+<p>1，手机要有root权限。</p>
+<p>2，下载安装busybox：</p>
+<p><img src="/2020/07/19/android_linux/Screenshot_2020-07-19-19-17-05.png" alt="Screenshot_2020-07-19-19-17-05"></p>
+<p>2，配置linux deploy环境</p>
+<p><img src="/2020/07/19/android_linux/Screenshot_2020-07-19-19-26-05.png" alt="Screenshot_2020-07-19-19-26-05"></p>
+<p><img src="/2020/07/19/android_linux/Screenshot_2020-07-19-19-28-10.png" alt="Screenshot_2020-07-19-19-28-10"></p>
+<p><img src="/2020/07/19/android_linux/Screenshot_2020-07-19-19-28-47.png" alt="Screenshot_2020-07-19-19-28-47"></p>
+<p><img src="/2020/07/19/android_linux/Screenshot_2020-07-19-19-29-34.png" alt="Screenshot_2020-07-19-19-29-34"></p>
+<p><img src="/2020/07/19/android_linux/Screenshot_2020-07-19-19-43-56.png" alt="Screenshot_2020-07-19-19-43-56"></p>
+<p>1），选择安装ubuntu；</p>
+<p>2），发行版GNU/Linux版本选择bionic，即ubuntu18；</p>
+<p>3），源地址选择华中科技大学镜像，国外镜像速度比较慢；</p>
+<p>4），安装路径设置为ENV_DIR；</p>
+<p>5），设置用户名，用户密码，root名；</p>
+<p>6），设置挂载点，可以挂载Android中的文件夹；挂载源地址是 /mnt/shell/emulated/0，目的地址是/mnt；这样整个手机的文件夹基本上都可以访问。</p>
+<p>7），启动ssh；</p>
+<p>8），安装桌面环境，这里选择MATE，个人觉得这个桌面环境稍微美观一些；</p>
+<p>设置完成之后，直接点击安装即可，安装后出现&gt;&gt;deploy即安装成功；</p>
+<p><img src="/2020/07/19/android_linux/Screenshot_2020-07-19-19-48-09.png" alt="Screenshot_2020-07-19-19-48-09"></p>
+<p><img src="/2020/07/19/android_linux/Screenshot_2020-07-19-19-49-26.png" alt="Screenshot_2020-07-19-19-49-26"></p>
+<p>安装成功后，先点击停止，然后从新开始运行</p>
+<p>所有项都是done后，就代表是正常启动了。</p>
+<p><img src="/2020/07/19/android_linux/Screenshot_2020-07-19-19-51-11.png" alt="Screenshot_2020-07-19-19-51-11"></p>
+<p>接下来试一下使用ssh连接：并安装c/C++开发环境，变编译代码。</p>
+<p><img src="/2020/07/19/android_linux/image-20200719195628318.png" alt="image-20200719195628318"></p>
+<p>VNC远程连接桌面，手机安装软件后一样可以连接桌面</p>
+<p><img src="/2020/07/19/android_linux/image-20200719195746316.png" alt="image-20200719195746316"></p>
+<p><img src="/2020/07/19/android_linux/Screenshot_2020-07-19-19-58-11.png" alt="Screenshot_2020-07-19-19-58-11"></p>
+]]></content>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
 </search>

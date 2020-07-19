@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xutopia88.github.io/"/>
-  <updated>2020-07-19T07:14:45.534Z</updated>
+  <updated>2020-07-19T12:17:19.205Z</updated>
   <id>https://xutopia88.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>android手机上安装linux</title>
+    <link href="https://xutopia88.github.io/2020/07/19/android_linux/"/>
+    <id>https://xutopia88.github.io/2020/07/19/android_linux/</id>
+    <published>2020-07-19T11:12:44.000Z</published>
+    <updated>2020-07-19T12:17:19.205Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;换了旧手机一直闲置在那里，看着很不舒服，考虑一下在其中安装linux。&lt;/p&gt;
+&lt;p&gt;1，手机要有root权限。&lt;/p&gt;
+&lt;p&gt;2，下载安装busybox：&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="linux" scheme="https://xutopia88.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>xutopia-blog</title>
