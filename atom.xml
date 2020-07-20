@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xutopia88.github.io/"/>
-  <updated>2020-07-19T12:17:19.205Z</updated>
+  <updated>2020-07-20T14:31:14.610Z</updated>
   <id>https://xutopia88.github.io/</id>
   
   <author>
@@ -21,20 +21,12 @@
     <link href="https://xutopia88.github.io/2020/07/19/android_linux/"/>
     <id>https://xutopia88.github.io/2020/07/19/android_linux/</id>
     <published>2020-07-19T11:12:44.000Z</published>
-    <updated>2020-07-19T12:17:19.205Z</updated>
+    <updated>2020-07-20T14:31:14.610Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;换了旧手机一直闲置在那里，看着很不舒服，考虑一下在其中安装linux。&lt;/p&gt;
-&lt;p&gt;1，手机要有root权限。&lt;/p&gt;
-&lt;p&gt;2，下载安装busybox：&lt;/p&gt;
-&lt;p&gt;&lt;img
-        
-      
+      &lt;p&gt;换了旧手机一直闲置在那里，看着很不舒服，考虑一下在其中安装linux。&lt;/p&gt;
+&lt;p&gt;安装选择ubuntu18.0，开启ssh，可以使用电脑远程连接。同时安装桌面环境，可以使用VNC远程连接，具体效果见文末。&lt;/p&gt;
     
     </summary>
     
